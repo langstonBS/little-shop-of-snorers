@@ -1,20 +1,22 @@
 import { getId, compairId, randomId } from './utils.js';
 import products from './assets/immageData.js';
-const itemImmages = document.querySelectorAll('img');
+const immageTag = document.querySelectorAll('img');
+const itemRadioTags = document.querySelectorAll('input');
 const butteSubmit = document.getElementById('submitShit');
-let selection;
-let lookedAt;
+const x = document.getElementsByClassName('items-selecton');
+const things = document.getElementById('stuff');
+
+let selection = [];
+let lookedAt = [];
 let idNumber;
 let idNumber2;
 let idNumber3;
 
 getRadeioValue();
-console.log(idNumber);
-console.log(idNumber2);
-console.log(idNumber3);
-addImage(idNumber);
-addImage(idNumber2);
-addImage(idNumber3);
+
+let numberOne = addImage(idNumber);
+let numbertwo = addImage(idNumber2);
+let numberthree = addImage(idNumber3);
 
 function getRadeioValue(){
     idNumber = randomId();
@@ -29,8 +31,8 @@ function getRadeioValue(){
 
 function addImage(id){
     const item = getId(products, id);
-    const image = 'assets/' + item.img;
-    const name = item.name;
+    const img = 'assets/' + item.img;
+    return item;
 }
 
 
