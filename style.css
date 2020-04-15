@@ -1,0 +1,25 @@
+
+
+input {
+    display: none;
+    
+}
+
+#items {
+    display:flex;
+}
+
+label {
+    flex-direction: column;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+input[type=radio]:checked + img {
+    border: black 10px solid;
+
+
+}

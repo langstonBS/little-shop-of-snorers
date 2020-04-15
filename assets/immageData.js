@@ -1,7 +1,7 @@
 const bag = {
     id: 1,
     name: 'bag',
-    img: 'bag.jpeg'
+    img: 'bag.jpg'
 
 };
 
@@ -42,10 +42,10 @@ const chair = {
     img: 'chair.jpg'
 };
 
-const cuthulhu = {
+const cthulhu = {
     id: 8,
-    name: 'cuthulhu',
-    img: 'cuthulhu.jpg'
+    name: 'cthulhu',
+    img: 'cthulhu.jpg'
 };
 
 const dogDuck = {
@@ -88,7 +88,7 @@ const shark = {
 const sweep = {
     id: 15,
     name: 'sweep',
-    img: 'sweep.jpg'
+    img: 'sweep.png'
 };
 
 const tauntaun = {
@@ -142,7 +142,7 @@ const products = [
     breakfast,
     bubblegum,
     chair,
-    cuthulhu,
+    cthulhu,
     dogDuck,
     dragon,
     pen,
