@@ -1,6 +1,3 @@
-
-
-
 export function getId(photos, id){
     // creas a for loop and logs throg
     // loop the array
@@ -15,7 +12,7 @@ export function getId(photos, id){
 }
 
 export function randomId(){
-    return Math.floor(Math.random() * 20);
+    return Math.floor(Math.random() * 19) + 1;
 }
 
 export function compairId(array1, array2, i){

@@ -13,7 +13,7 @@ function createSelecrtion(items, frog, iterator) {
     const typeB = document.createElement('type');
     typeB.textContent = 'raideo';
 
-    const priceTd = document.createElement('value');
+    const priceTd = doument.createElement('value');
     priceTd.textContent = readablePrice(items.id);
 
     const totalTd = document.createElement('td');

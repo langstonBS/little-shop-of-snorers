@@ -2,10 +2,11 @@
 
 
 
-const json = localStorage.getItem('DISPLAY');
-let ansers = [];
+const json = localStorage.getItem('USER');
+console.log(json);
+let ansers;
 if (json) {
-    ansers = JSON.parse(json);
+    ansers = json;
 }
 
 else {
