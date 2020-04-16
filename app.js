@@ -1,6 +1,6 @@
 import { getId, randomId } from './utils.js';
 import products from './assets/immageData.js';
-import { } from './saveForLocalStorage.js';
+import { incrementTimesSeen, incrementTimesPicked } from './saveForLocalStorage.js'; 
 const immageTag = document.querySelectorAll('img');
 const itemRadioTags = document.querySelectorAll('input');
 const butteSubmit = document.getElementById('submitShit');
@@ -42,6 +42,7 @@ butteSubmit.addEventListener('click', () => {
         console.log("we hve done 25 times");
         console.log("this is what was selected: ", Selection);
         console.log("this is what was viewd: ", viewed);
+        viewedItmesLocalStorage();
 
     }
 });
@@ -109,3 +110,15 @@ function addImage(item){
     return location;
 }
 
+function itmesLocalStorage(){
+    for (let i = 0; i < viewed.length - 3; i++)
+    {
+        incrementTimesSeen(viewed[i]);
+
+    }
+    for (let i = 0; i < Selection.length; i++) {
+        Selection[i];
+        
+    }
+
+}

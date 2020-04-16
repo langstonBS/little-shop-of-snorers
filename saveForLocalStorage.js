@@ -1,20 +1,24 @@
-import { getId } from './utils.js';
 
+const voteItem = [{
+    id: 0,
+    timesViewed: 0,
+    votes: 0
+}];
 
-export function incrementTimesSeen(_id, _votes) {
-    let voteItem = getId(votes, _id);
+export function incrementTimesSeen(_id) {
+    let voteItem = getId(_id);
     if (!voteItem) {
-        addInitialVoteItem(_id, _votes);
-        voteItem = getId(votes, _id);
+        addInitialVoteItem(_id);
+        voteItem = getId(_id);
     }
     voteItem.timesViewed++;
 }
 
-export function incrementTimesPicked(id, votes) {
-    let voteItem = getId(votes, id);
+export function incrementTimesPicked(id) {
+    let voteItem = getItem(id);
     if (!voteItem) {
-        addInitialVoteItem(id, votes);
-        voteItem = getId(votes, id);
+        addInitialVoteItem(id);
+        voteItem = getItem(id);
     }
     voteItem.votes++;
 }
@@ -26,4 +30,15 @@ function addInitialVoteItem(id, votes) {
         votes: 0
     };
     votes.push(voteItem);
+}
+
+function getItem(id){
+    for (let i = 0; i < voteItem.length; i++) {
+        let element = 0;
+        if (voteItem[i].id === id){
+            element = i;
+        }
+    }
+    return element;
+
 }
