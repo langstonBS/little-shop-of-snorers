@@ -5,8 +5,9 @@ input {
     
 }
 
-#items {
+.items {
     display:flex;
+    
 }
 
 label {
@@ -16,10 +17,28 @@ label {
 img {
     width: 200px;
     height: 200px;
+    margin: 25px;
 }
 
 input[type=radio]:checked + img {
-    border: black 10px solid;
+    border: chocolate 10px solid;
 
 
+}
+
+button {
+    background-color: darkred; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 4px;
+  }
+
+button:hover {
+  background-color: chocolate;
+  color: white;
 }

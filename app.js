@@ -38,7 +38,7 @@ butteSubmit.addEventListener('click', () => {
         buttenClicks += 1;
     }
     appFuntion(user);
-    console.log("nuber of times is", buttenClicks);
+
     
     if (buttenClicks > 24){
         window.location = './results/results.html';

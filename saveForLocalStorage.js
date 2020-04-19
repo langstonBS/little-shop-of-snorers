@@ -6,9 +6,6 @@ const voteItem = [{
 }];
 
 export function incrementTimesSeen(_id) {
-    console.log('the id leath', _id.length);
-   
-    console.log('this is the ide', _id )
 
     for (let i = 0; i < _id.length; i++) {
         
@@ -18,10 +15,8 @@ export function incrementTimesSeen(_id) {
                 idForInc = true;
                 voteItem[x].timesViewed++  
             }    
- 
-           
-
         };
+
         if (!idForInc){
             addInitialVoteItem(_id[i]);
             idForInc = false;
@@ -53,11 +48,6 @@ export function loging(){
     for (let x = 0; x < voteItem.length; x++) {
         p =  voteItem[x].timesViewed + p;
   };  
-
-
-    console.log("the vote count", v)
-    console.log("the totoal count", p)
-
 }
 
 function addInitialVoteItem(id) {
@@ -73,6 +63,5 @@ export function createLocalStorage() {
     
     let stringTheVotes = '';
     stringTheVotes = JSON.stringify(voteItem);
-    console.log(stringTheVotes)
     localStorage.setItem('VOTES', stringTheVotes);
 }

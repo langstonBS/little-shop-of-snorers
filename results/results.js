@@ -1,10 +1,20 @@
 
 import tableCreate from './table.js';
+import { incrementTimesSeen, incrementTimesPicked, loging, createLocalStorage } from '../saveForLocalStorage.js';
 
 let td = document.getElementById('table');
+let tdFull = document.getElementById('full');
 
-let t = getItemsFromJSON();
-putInTable(t);
+
+let questInfo = getItemsFromJSON();
+ 
+putInTable(questInfo, td);
+clearLocalData(questInfo);
+let fullData = allTimeUse();
+
+putInTable(fullData, tdFull);
+clearLocalData(fullData);
+
 
 
 
@@ -20,12 +30,9 @@ function getItemsFromJSON() {
 
 }
 
-function putInTable(ansers){
+function putInTable(ansers, td){
     for (let i = 0; i< ansers.length; i++) {
         td.append(tableCreate(ansers[i]));
     }
 }
 
-function clearLocalData(){
-    
-}

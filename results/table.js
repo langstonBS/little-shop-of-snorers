@@ -31,11 +31,9 @@ function gitName(nameId)
 {
     let names = ' ';
     for (let i = 0; i < arrayData.length; i++) { 
-        console.log("i am in the for statmet");
         
         if (arrayData[i].id === nameId.id){
             names = arrayData[i].name;
-            console.log("i am in the if statmet", arrayData[i].name);
             return names;
         }
     };
