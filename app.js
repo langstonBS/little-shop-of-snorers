@@ -1,6 +1,9 @@
 import { getId, randomId } from './utils.js';
 import products from './assets/immageData.js';
-import { incrementTimesSeen, incrementTimesPicked } from './saveForLocalStorage.js'; 
+import { incrementTimesSeen, 
+    incrementTimesPicked, 
+    loging, 
+    createLocalStorage } from './saveForLocalStorage.js'; 
 const immageTag = document.querySelectorAll('img');
 const itemRadioTags = document.querySelectorAll('input');
 const butteSubmit = document.getElementById('submitShit');
@@ -10,7 +13,7 @@ const butteSubmit = document.getElementById('submitShit');
 
 //store it in local storage
 
-let Selection = [];
+let selection = [];
 let viewed = [];
 let buttenClicks = 0;
 let idNumber;
@@ -38,11 +41,8 @@ butteSubmit.addEventListener('click', () => {
     console.log("nuber of times is", buttenClicks);
     
     if (buttenClicks > 24){
-        //window.location = './results/results.html';
-        console.log("we hve done 25 times");
-        console.log("this is what was selected: ", Selection);
-        console.log("this is what was viewd: ", viewed);
-        viewedItmesLocalStorage();
+        window.location = './results/results.html';
+        itmesLocalStorage(viewed);
 
     }
 });
@@ -65,7 +65,7 @@ function appFuntion(user) {
 function placeInSlection(value){
     const valueIdFind = parseInt(value);
     const item = gitItem(valueIdFind);
-    Selection.push(item.id);
+    selection.push(item.id);
 }
 
 function placeInViewd(){
@@ -110,15 +110,10 @@ function addImage(item){
     return location;
 }
 
-function itmesLocalStorage(){
-    for (let i = 0; i < viewed.length - 3; i++)
-    {
-        incrementTimesSeen(viewed[i]);
-
-    }
-    for (let i = 0; i < Selection.length; i++) {
-        Selection[i];
-        
-    }
+function itmesLocalStorage(viewed){
+        incrementTimesSeen(viewed);
+        incrementTimesPicked(selection);
+        loging();
+        createLocalStorage();
 
 }

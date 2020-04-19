@@ -1,17 +1,31 @@
 
+import tableCreate from './table.js';
+
+let td = document.getElementById('table');
+
+let t = getItemsFromJSON();
+putInTable(t);
 
 
 
-const json = localStorage.getItem('USER');
-console.log(json);
-let ansers;
-if (json) {
-    ansers = json;
+function getItemsFromJSON() {
+    const json = localStorage.getItem('VOTES');
+    let ansers;
+    if (json) {
+        ansers = JSON.parse(json);
+    } else {
+        ansers = [];
+    }
+    return ansers
+
 }
 
-else {
-    ansers = [];
+function putInTable(ansers){
+    for (let i = 0; i< ansers.length; i++) {
+        td.append(tableCreate(ansers[i]));
+    }
 }
 
-
-console.log(ansers);
+function clearLocalData(){
+    
+}

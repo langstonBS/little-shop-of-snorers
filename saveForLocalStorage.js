@@ -6,39 +6,73 @@ const voteItem = [{
 }];
 
 export function incrementTimesSeen(_id) {
-    let voteItem = getId(_id);
-    if (!voteItem) {
-        addInitialVoteItem(_id);
-        voteItem = getId(_id);
-    }
-    voteItem.timesViewed++;
+    console.log('the id leath', _id.length);
+   
+    console.log('this is the ide', _id )
+
+    for (let i = 0; i < _id.length; i++) {
+        
+        let idForInc = false;  
+        for (let x = 0; x < voteItem.length; x++) {
+            if (voteItem[x].id === _id[i]){
+                idForInc = true;
+                voteItem[x].timesViewed++  
+            }    
+ 
+           
+
+        };
+        if (!idForInc){
+            addInitialVoteItem(_id[i]);
+            idForInc = false;
+        }
+
+    };
 }
 
-export function incrementTimesPicked(id) {
-    let voteItem = getItem(id);
-    if (!voteItem) {
-        addInitialVoteItem(id);
-        voteItem = getItem(id);
-    }
-    voteItem.votes++;
+export function incrementTimesPicked(_id) {
+    for (let i = 0; i < _id.length; i++) {
+            
+        for (let x = 0; x < voteItem.length; x++) {
+            if (voteItem[x].id === _id[i])
+            {
+                voteItem[x].votes++  
+            }        
+        };   
+    };
 }
 
-function addInitialVoteItem(id, votes) {
-    const voteItem = {
+export function loging(){
+    console.log(voteItem);
+    let v = 0;
+    let p =  0;
+    for (let x = 0; x < voteItem.length; x++) {
+          v =  voteItem[x].votes + v;
+    };  
+
+    for (let x = 0; x < voteItem.length; x++) {
+        p =  voteItem[x].timesViewed + p;
+  };  
+
+
+    console.log("the vote count", v)
+    console.log("the totoal count", p)
+
+}
+
+function addInitialVoteItem(id) {
+    const itemObject = {
         id: id,
-        timesViewed: 0,
+        timesViewed: 1,
         votes: 0
     };
-    votes.push(voteItem);
+    voteItem.push(itemObject);
 }
 
-function getItem(id){
-    for (let i = 0; i < voteItem.length; i++) {
-        let element = 0;
-        if (voteItem[i].id === id){
-            element = i;
-        }
-    }
-    return element;
-
+export function createLocalStorage() {
+    
+    let stringTheVotes = '';
+    stringTheVotes = JSON.stringify(voteItem);
+    console.log(stringTheVotes)
+    localStorage.setItem('VOTES', stringTheVotes);
 }

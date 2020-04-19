@@ -1,1 +1,45 @@
+import arrayData from '../assets/immageData.js';
 
+
+export default function tableRow(array) {
+   
+    const tr = document.createElement('tr');
+
+    let m = array;
+    const nameTd = document.createElement('td');
+    let n = gitName(m);
+    console.log(n)
+    nameTd.textContent = n;
+    
+    
+    const timesViewed = document.createElement('td');
+    timesViewed.textContent = array.timesViewed;
+
+    const votes = document.createElement('td');
+    votes.textContent = array.votes
+
+
+    tr.appendChild(nameTd);
+    tr.appendChild(timesViewed);
+    tr.appendChild(votes);
+
+    return tr;
+}
+
+
+function gitName(nameId)
+{
+    let names = ' ';
+    for (let i = 0; i < arrayData.length; i++) { 
+        console.log("i am in the for statmet");
+        
+        if (arrayData[i].id === nameId.id){
+            names = arrayData[i].name;
+            console.log("i am in the if statmet", arrayData[i].name);
+            return names;
+        }
+    };
+    return "didnotwok";
+    
+
+}

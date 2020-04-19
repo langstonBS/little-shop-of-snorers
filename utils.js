@@ -1,3 +1,5 @@
+
+
 export function getId(photos, id){
     // creas a for loop and logs throg
     // loop the array
@@ -24,6 +26,7 @@ export function compairId(array1, array2, i){
         return false;
     }
 }
+
 
 
 
