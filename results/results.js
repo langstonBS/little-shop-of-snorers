@@ -1,6 +1,6 @@
 
 import tableCreate from './table.js';
-import { incrementTimesSeen, incrementTimesPicked, loging, createLocalStorage } from '../saveForLocalStorage.js';
+
 
 let td = document.getElementById('table');
 
