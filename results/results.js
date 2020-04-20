@@ -8,8 +8,6 @@ let questInfo = getItemsFromJSON();
  
 putInTable(questInfo, td);
 clearLocalData(questInfo);
-
-putInTable(fullData, tdFull);
 clearLocalData(fullData);
 
 
@@ -35,14 +33,4 @@ function putInTable(ansers, td){
 
 function clearLocalData(aray){
     localStorage.removeItem('VOTES');
-    let data = localStorage.getItem('FULLDATA');
-    let stringTheData = '';
-    
-    if (data){
-        data = JSON.parse(data);
-    } else {
-        data = [];
-    }
-    stringTheData = JSON.stringify(aray);
-    localStorage.setItem('FULLDATA', stringTheData);  
 }

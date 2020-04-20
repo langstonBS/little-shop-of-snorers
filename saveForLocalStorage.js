@@ -42,7 +42,7 @@ export function loging(){
     let p = 0;
     
     for (let x = 0; x < voteItem.length; x++) {
-        v =  voteItem[x].votes + v;
+        v = voteItem[x].votes + v;
     } 
 
     for (let x = 0; x < voteItem.length; x++) {
