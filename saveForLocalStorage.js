@@ -31,7 +31,7 @@ export function incrementTimesPicked(_id) {
         for (let x = 0; x < voteItem.length; x++) {
             if (voteItem[x].id === _id[i])
             {
-                voteItem[x].votes++  
+                voteItem[x].votes++; 
             }        
         };   
     };

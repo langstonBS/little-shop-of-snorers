@@ -3,17 +3,12 @@ import tableCreate from './table.js';
 import { incrementTimesSeen, incrementTimesPicked, loging, createLocalStorage } from '../saveForLocalStorage.js';
 
 let td = document.getElementById('table');
-let tdFull = document.getElementById('full');
 
 
 let questInfo = getItemsFromJSON();
  
 putInTable(questInfo, td);
 clearLocalData(questInfo);
-let fullData = allTimeUse();
-
-putInTable(fullData, tdFull);
-clearLocalData(fullData);
 
 
 

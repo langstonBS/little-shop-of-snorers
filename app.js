@@ -111,9 +111,9 @@ function addImage(item){
 }
 
 function itmesLocalStorage(viewed){
-        incrementTimesSeen(viewed);
-        incrementTimesPicked(selection);
-        loging();
-        createLocalStorage();
+    incrementTimesSeen(viewed);
+    incrementTimesPicked(selection);
+    loging();
+    createLocalStorage();
 
 }
