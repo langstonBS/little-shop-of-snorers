@@ -13,9 +13,9 @@ export function incrementTimesSeen(_id) {
         for (let x = 0; x < voteItem.length; x++) {
             if (voteItem[x].id === _id[i]){
                 idForInc = true;
-                voteItem[x].timesViewed++  
+                voteItem[x].timesViewed++; 
             }    
-        };
+        }
 
         if (!idForInc){
             addInitialVoteItem(_id[i]);
@@ -39,15 +39,15 @@ export function incrementTimesPicked(_id) {
 
 export function loging(){
     let v = 0;
-    let p =  0;
+    let p = 0;
     
     for (let x = 0; x < voteItem.length; x++) {
-          v =  voteItem[x].votes + v;
-    };  
+        v =  voteItem[x].votes + v;
+    } 
 
     for (let x = 0; x < voteItem.length; x++) {
-        p =  voteItem[x].timesViewed + p;
-    };  
+        p = voteItem[x].timesViewed + p;
+    } 
 }
 
 function addInitialVoteItem(id) {
