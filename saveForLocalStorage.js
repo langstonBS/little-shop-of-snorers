@@ -38,7 +38,6 @@ export function incrementTimesPicked(_id) {
 }
 
 export function loging(){
-    console.log(voteItem);
     let v = 0;
     let p =  0;
     for (let x = 0; x < voteItem.length; x++) {

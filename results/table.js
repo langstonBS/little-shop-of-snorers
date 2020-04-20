@@ -8,7 +8,6 @@ export default function tableRow(array) {
     let m = array;
     const nameTd = document.createElement('td');
     let n = gitName(m);
-    console.log(n)
     nameTd.textContent = n;
     
     
@@ -16,7 +15,7 @@ export default function tableRow(array) {
     timesViewed.textContent = array.timesViewed;
 
     const votes = document.createElement('td');
-    votes.textContent = array.votes
+    votes.textContent = array.votes;
 
 
     tr.appendChild(nameTd);
@@ -37,7 +36,7 @@ function gitName(nameId)
             return names;
         }
     };
-    return "didnotwok";
+    return null;
     
 
 }
