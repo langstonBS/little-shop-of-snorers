@@ -22,7 +22,7 @@ export function incrementTimesSeen(_id) {
             idForInc = false;
         }
 
-    };
+    }
 }
 
 export function incrementTimesPicked(_id) {
@@ -33,20 +33,21 @@ export function incrementTimesPicked(_id) {
             {
                 voteItem[x].votes++; 
             }        
-        };   
-    };
+        }  
+    }
 }
 
 export function loging(){
     let v = 0;
     let p =  0;
+    
     for (let x = 0; x < voteItem.length; x++) {
           v =  voteItem[x].votes + v;
     };  
 
     for (let x = 0; x < voteItem.length; x++) {
         p =  voteItem[x].timesViewed + p;
-  };  
+    };  
 }
 
 function addInitialVoteItem(id) {

@@ -35,7 +35,7 @@ function gitName(nameId)
             names = arrayData[i].name;
             return names;
         }
-    };
+    }
     return null;
     
 

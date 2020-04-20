@@ -1,14 +1,19 @@
 
 import tableCreate from './table.js';
-
+;
 
 let td = document.getElementById('table');
+let tdFull = document.getElementById('full');
 
 
 let questInfo = getItemsFromJSON();
  
 putInTable(questInfo, td);
 clearLocalData(questInfo);
+let fullData = allTimeUse();
+
+putInTable(fullData, tdFull);
+clearLocalData(fullData);
 
 
 
@@ -21,13 +26,26 @@ function getItemsFromJSON() {
     } else {
         ansers = [];
     }
-    return ansers
+    return ansers;
 
 }
 
 function putInTable(ansers, td){
-    for (let i = 0; i< ansers.length; i++) {
+    for (let i = 0; i < ansers.length; i++) {
         td.append(tableCreate(ansers[i]));
     }
 }
 
+function clearLocalData(aray){
+    localStorage.removeItem('VOTES');
+    let data = localStorage.getItem('FULLDATA');
+    let stringTheData = '';
+    
+    if (data){
+        data = JSON.parse(data);
+    } else {
+        data = [];
+    }
+    stringTheData = JSON.stringify(aray);
+    localStorage.setItem('FULLDATA', stringTheData);  
+}
