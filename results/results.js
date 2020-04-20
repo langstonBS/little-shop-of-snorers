@@ -7,8 +7,7 @@ let td = document.getElementById('table');
 let questInfo = getItemsFromJSON();
  
 putInTable(questInfo, td);
-clearLocalData(questInfo);
-clearLocalData(fullData);
+clearLocalData();
 
 
 
@@ -31,6 +30,6 @@ function putInTable(ansers, td){
     }
 }
 
-function clearLocalData(aray){
+function clearLocalData(){
     localStorage.removeItem('VOTES');
 }
