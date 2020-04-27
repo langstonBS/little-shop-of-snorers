@@ -1,11 +1,10 @@
 
 
 export function getId(photos, id){
-    // creas a for loop and logs throg
-    // loop the array
+
     for (let i = 0; i < photos.length; i++) {
         const photo = photos[i];
-               // check the id against item.id
+   
         if (photo.id === id) {
             return photo;
         }
