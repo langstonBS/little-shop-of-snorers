@@ -1,6 +1,5 @@
 {
   "extends": "eslint:recommended",
-  "extends": "chartjs",
   "parserOptions": {
     "ecmaVersion": 8,
     "ecmaFeatures": {
@@ -14,7 +13,8 @@
     "jest": true
   },
   "globals": {
-    "QUnit": false
+    "QUnit": false,
+    "Chart": false
   },
   "rules": {
     "eqeqeq": ["error", "always"],
