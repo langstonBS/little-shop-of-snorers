@@ -1,19 +1,13 @@
 
 import tableCreate from './table.js';
-import { incrementTimesSeen, incrementTimesPicked, loging } from '../saveForLocalStorage.js';
+
 
 
 
 let td = document.getElementById('table');
-let tdTotal = document.getElementById('total');
 
 let questInfo = getItemsFromJSON();
-let items = getTotalFromJSON();
-addtoArray();
 putInTable(questInfo, td);
-putInTable(items, tdTotal);
-
-addItemsToLocalStorage(items);
 
 
 function getItemsFromJSON() {
@@ -34,42 +28,28 @@ function putInTable(_ansers, td){
     }
 }
 
-function addItemsToLocalStorage(ansers) {
-    incrementTimesSeen(ansers);
-    incrementTimesPicked(ansers);
-    loging();
-    createLocalStorageTotal();
-
-    
-}
 
 
 
-function getTotalFromJSON() {
-    const json = localStorage.getItem('VOTEITEMS');
-    let ansers;
-    if (json) {
-        ansers = JSON.parse(json);
-    } else {
-        ansers = [];
-    }
-    return ansers;
 
-}
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
 
-function createLocalStorageTotal() {
-    let stringTheVotes = ' ';
-    stringTheVotes = JSON.stringify(items);
-    localStorage.setItem('VOTETOTAL', stringTheVotes);
-}
+    // The data for our dataset
+    data: {
+        labels: [questInfo.id],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
 
+    // Configuration options go here
+    options: {}
+});
 
-
-function addtoArray() {
- 
-    for (let i = 0; i < questInfo.length; i++) {
-        const info = questInfo[i];
-        items.push(info);    
-    }
-}
 
